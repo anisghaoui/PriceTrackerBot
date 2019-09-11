@@ -1,0 +1,10 @@
+{
+	"item 1" :{
+		"url": "https://www.amazon.com/dp/B06W5F2Y73/ref=twister_B07VL5S432?_encoding=UTF8&psc=1",
+		"desired price": "30.0"
+	},
+	"item 2" :{
+		"url": "https://www.amazon.com/PlayStation-4-Slim-1TB-Console/dp/B071CV8CG2/ref=lp_16225016011_1_12?s=videogames-intl-ship&ie=UTF8&qid=1568059377&sr=1-12",
+		"desired price": "200.0"
+	}
+}
