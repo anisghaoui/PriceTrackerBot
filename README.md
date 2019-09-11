@@ -21,3 +21,6 @@ The bot can run in background and can be daemonised while occupying minimum ram 
 
 ## Acknowledgments
 [Dev Ed](https://www.youtube.com/watch?v=Bg9r_yLk7VY)'s video inspired me to do this. 
+
+## License
+This project is licensed under the GNU GENERAL PUBLIC LICENSE v3.0 - see the [LICENSE.md](LICENSE.md) file for details
