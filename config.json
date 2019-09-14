@@ -1,7 +1,7 @@
 {
-	"from email" : "m.a.ghaoui.s@gmail.com",
-	"to email" : "m.a.ghaoui.s@gmail.com",
-	"password" : "nele1996",
+	"from email" : "email@gmail.com",
+	"to email" : "address@gmail.com",
+	"password" : "password",
 	"headers":{
 		"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0"
 	},
