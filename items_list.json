@@ -1,12 +1,8 @@
 {
 	"items list": [
-		{
-			"url": "https://www.amazon.com/dp/B06W5F2Y73/ref=twister_B07VL5S432?_encoding=UTF8&psc=1",
-			"desired price": 30.0
-		},
-		{
-			"url": "https://www.amazon.com/PlayStation-4-Slim-1TB-Console/dp/B071CV8CG2/ref=lp_16225016011_1_12?s=videogames-intl-ship&ie=UTF8&qid=1568059377&sr=1-12",
-			"desired price": 200.0
+			{
+			"url": "https://www.amazon.fr/dissolvant-compagnie-nettoyant-anti-poussi%C3%A8re-v%C3%AAtements/dp/B07VT3M88S?pd_rd_w=UNGh2&content-id=amzn1.sym.3e3a04b5-9807-49d4-af8a-2ce65f5528b3&pf_rd_p=3e3a04b5-9807-49d4-af8a-2ce65f5528b3&pf_rd_r=XE0Y3Z00SKKDWE4RA3HN&pd_rd_wg=P73bG&pd_rd_r=9324dc9f-5938-48cd-9e01-b6d6346678d8&pd_rd_i=B07VT3M88S&psc=1&ref_=pd_bap_d_rp_1_i",
+			"desired price": 300.0
 		}
 	]
 }

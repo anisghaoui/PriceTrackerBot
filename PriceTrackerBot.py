@@ -17,6 +17,9 @@ class PriceTrackerBot(object):
 			self.url = url
 			self.desired_price = desired_price
 
+		def __str__(self):
+			return f"desired price={self.desired_price}\turl = {self.url}"
+
 
 	#################################################
 	def __init__(self):
@@ -39,15 +42,16 @@ class PriceTrackerBot(object):
 			self.items_list =[]
 		except Exception as e:
 			print("No config.json file found")
-		try:	
-			json_data_file = open('items list.json')
-			list_data = json.load(json_data_file)
-			for item in list_data:
-				url = list_data[item]["url"]
-				desired_price = float(list_data[item]["desired price"])
-				self.add_item(self.AmazonItem(url, desired_price = desired_price))
-		except Exception as e:
-			print('No "items list.json" file found')
+		# try:	
+		json_data_file = open('items_list.json')
+		list_data = json.load(json_data_file)
+		for item in list_data["items list"]:
+			url = item["url"]
+			desired_price = float(item["desired price"])
+			self.add_item(self.AmazonItem(url, desired_price = desired_price))
+		# except Exception as e:
+			# print(e)
+			# print('No "items_list.json" file found')
 
 	def _login (self):
 		""" logs into the gmail account with the given credential"""
@@ -57,6 +61,7 @@ class PriceTrackerBot(object):
 		self.server.ehlo()
 		try:
 			self.server.login(self.fromEmail, self.password)
+
 		except :
 			print("Login error")
 			self.server.quit()
@@ -81,16 +86,14 @@ class PriceTrackerBot(object):
 		page = requests.get(amazon_item.url, headers = self.headers) 
 
 		# to overcome the js on Amazon.com website
-		soup_bis = bs(page.content, "html.parser") 
+		soup_bis = bs(page.content, "html.parser")
 		soup = bs(soup_bis.prettify(), "html.parser")
 		del soup_bis
 
 		amazon_item.name = soup.find(id = 'productTitle').get_text().strip()
-
 		#this part changes depending on Amazon
-		parsed_price = soup.find(id = 'price').get_text().strip().split('$')
-		parsed_price = parsed_price[1].strip().split(' ')[0] #in $
-
+		parsed_price = soup.find(class_ = "a-offscreen").get_text().strip()
+		parsed_price = parsed_price[:-1].replace(",",".") #in 
 		amazon_item.price = float(parsed_price)
 
 		if amazon_item.price < amazon_item.desired_price :
@@ -103,6 +106,7 @@ class PriceTrackerBot(object):
 			if self.check_price_is_low(item):
 				self.send_email(
 					item.name 
+					""
 					+ "s's price is below " 
 					+ str(item.desired_price)
 					+ '$.\nClick on this link to view the item : ' 
